@@ -1,0 +1,81 @@
+name: Gabung chunk jadi video
+
+# Gabung chunk dari dua run berbeda jadi satu video final, TANPA me-render
+# ulang apa pun. Dipakai kalau render chunk-nya sudah sukses tapi job merge
+# gagal (misal run parsial 45681581841: chunk 5, 6, 8 sukses, merge gagal
+# karena path unduhan chunk lama).
+# Cara pakai: Actions tab -> Gabung chunk jadi video -> Run workflow,
+#   new_run_id: run yang berisi chunk hasil render ulang (contoh: 45681581841)
+#   old_run_id: run yang berisi chunk sukses lainnya (contoh: 45673730973)
+#
+# Catatan: download-artifact dari run lain (run-id) kadang menaruh file di
+# subfolder per artifact meski merge-multiple: true, jadi script merge
+# memakai `find` untuk mengumpulkan chunk-*.mp4 dari mana pun letaknya.
+# Prasyarat: artifact chunk di kedua run masih ada (retention chunk cuma
+# 1 hari, jadi jangan ditunda-tunda).
+
+on:
+  workflow_dispatch:
+    inputs:
+      new_run_id:
+        description: 'ID run berisi chunk hasil render ulang (contoh: 45681581841)'
+        required: true
+        default: '45681581841'
+      old_run_id:
+        description: 'ID run berisi chunk sukses lainnya (contoh: 45673730973)'
+        required: true
+        default: '45673730973'
+
+jobs:
+  merge:
+    name: Gabung chunk dari 2 run jadi satu video
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Chunk hasil render ulang dari run baru.
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.new_run_id }}
+          path: new-chunks
+          pattern: chunk-*
+          merge-multiple: true
+
+      # Chunk sukses lainnya dari run lama.
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.old_run_id }}
+          path: old-chunks
+          pattern: chunk-*
+          merge-multiple: true
+
+      # FFmpeg TIDAK tersedia bawaan di runner ubuntu-latest (run test pertama
+      # gagal dengan "ffmpeg: command not found"), jadi install dulu via apt.
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      # Semua chunk punya codec/resolusi/fps yang sama, jadi digabung
+      # dengan stream copy (tanpa re-encode, cepat dan tanpa turun kualitas).
+      # Chunk dikumpulkan dari kedua folder unduhan dengan find, karena
+      # download-artifact dari run lain bisa menaruh file di subfolder.
+      - name: Gabung chunk dengan FFmpeg
+        run: |
+          mkdir -p all-chunks
+          find new-chunks old-chunks -name 'chunk-*.mp4' -exec cp {} all-chunks/ \;
+          cd all-chunks
+          for i in 0 1 2 3 4 5 6 7 8 9; do
+            if [ ! -f "chunk-$i.mp4" ]; then
+              echo "chunk-$i.mp4 tidak ada di kedua run — batal"
+              exit 1
+            fi
+            echo "file '$PWD/chunk-$i.mp4'" >> list.txt
+          done
+          ls -la chunk-*.mp4
+          ffmpeg -f concat -safe 0 -i list.txt -c copy ../out.mp4
+          ffprobe -v error -show_entries format=duration -of csv=p=0 ../out.mp4
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-video
+          path: out.mp4
+          retention-days: 7
