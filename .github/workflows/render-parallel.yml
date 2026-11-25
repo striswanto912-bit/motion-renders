@@ -42,8 +42,12 @@ jobs:
         id: range
         run: python3 scripts/chunk_frames.py --total "${{ inputs.total_frames }}" --chunks 10 --index "${{ matrix.chunk }}"
 
+      # Frame three.js berat (crowd + crossfade yang menggambar 2 scene) bisa
+      # lebih dari 33 detik di software rendering runner 2-core, jadi naikkan
+      # timeout per frame; concurrency=1 supaya 2 halaman Chrome tidak
+      # berebut 2 core yang sama.
       - name: Render chunk
-        run: npx remotion render "${{ inputs.composition }}" "chunk-${{ matrix.chunk }}.mp4" --frames="${{ steps.range.outputs.start }}-${{ steps.range.outputs.end }}"
+        run: npx remotion render "${{ inputs.composition }}" "chunk-${{ matrix.chunk }}.mp4" --frames="${{ steps.range.outputs.start }}-${{ steps.range.outputs.end }}" --timeout=120000 --concurrency=1
 
       - uses: actions/upload-artifact@v4
         with:
