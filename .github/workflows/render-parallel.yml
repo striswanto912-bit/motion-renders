@@ -64,7 +64,11 @@ jobs:
           pattern: chunk-*
           merge-multiple: true
 
-      # FFmpeg sudah ter-install di runner ubuntu-latest.
+      # FFmpeg TIDAK tersedia bawaan di runner ubuntu-latest (run test pertama
+      # gagal dengan "ffmpeg: command not found"), jadi install dulu via apt.
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       # Semua chunk punya codec/resolusi/fps yang sama, jadi digabung
       # dengan stream copy (tanpa re-encode, cepat dan tanpa turun kualitas).
       - name: Gabung chunk dengan FFmpeg
