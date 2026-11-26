@@ -25,6 +25,10 @@ on:
         description: 'ID run berisi chunk sukses lainnya (contoh: 45673730973)'
         required: true
         default: '45673730973'
+      total_chunks:
+        description: 'Jumlah chunk skema render sumber (20 atau 50; harus sama dengan workflow render yang dipakai)'
+        required: true
+        default: '20'
 
 jobs:
   merge:
@@ -63,7 +67,7 @@ jobs:
           mkdir -p all-chunks
           find new-chunks old-chunks -name 'chunk-*.mp4' -exec cp {} all-chunks/ \;
           cd all-chunks
-          for i in 0 1 2 3 4 5 6 7 8 9; do
+          for i in $(seq 0 $(( ${{ inputs.total_chunks }} - 1 ))); do
             if [ ! -f "chunk-$i.mp4" ]; then
               echo "chunk-$i.mp4 tidak ada di kedua run — batal"
               exit 1

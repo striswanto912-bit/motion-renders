@@ -1,0 +1,91 @@
+name: Render parallel (20 chunks)
+
+# Render satu komposisi Remotion dalam 20 chunk paralel, lalu gabung jadi satu video.
+# Dipakai bareng: scripts/chunk_frames.py
+# Cara pakai: Actions tab -> Render parallel -> Run workflow,
+#   atau dari terminal: gh workflow run render-20.yml -f composition=BridgeShort -f total_frames=2025
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: 'Composition ID (lihat daftar: npx remotion compositions)'
+        required: true
+        default: 'BridgeShort'
+      total_frames:
+        description: 'Total frame komposisi (BridgeShort=2025, tiap scene Antarctica=300)'
+        required: true
+        default: '2025'
+
+jobs:
+  render-chunk:
+    name: Render chunk ${{ matrix.chunk }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # satu chunk gagal tidak membatalkan chunk lain
+      matrix:
+        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      # Download headless Chrome yang dipakai Remotion buat render.
+      - run: npx remotion browser ensure
+
+      - name: Hitung range frame chunk ini
+        id: range
+        run: python3 scripts/chunk_frames.py --total "${{ inputs.total_frames }}" --chunks 20 --index "${{ matrix.chunk }}"
+
+      # Frame three.js berat (crowd + crossfade yang menggambar 2 scene) bisa
+      # lebih dari 33 detik di software rendering runner 2-core, jadi naikkan
+      # timeout per frame; concurrency=1 supaya 2 halaman Chrome tidak
+      # berebut 2 core yang sama.
+      - name: Render chunk
+        run: npx remotion render "${{ inputs.composition }}" "chunk-${{ matrix.chunk }}.mp4" --frames="${{ steps.range.outputs.start }}-${{ steps.range.outputs.end }}" --timeout=120000 --concurrency=1
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: chunk-${{ matrix.chunk }}.mp4
+          retention-days: 1 # chunk cuma dibutuhkan buat merge, hapus cepat biar hemat storage
+
+  merge:
+    name: Gabung 20 chunk jadi satu video
+    needs: render-chunk
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: chunks
+          pattern: chunk-*
+          merge-multiple: true
+
+      # FFmpeg TIDAK tersedia bawaan di runner ubuntu-latest (run test pertama
+      # gagal dengan "ffmpeg: command not found"), jadi install dulu via apt.
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      # Semua chunk punya codec/resolusi/fps yang sama, jadi digabung
+      # dengan stream copy (tanpa re-encode, cepat dan tanpa turun kualitas).
+      - name: Gabung chunk dengan FFmpeg
+        run: |
+          cd chunks
+          for i in $(seq 0 19); do
+            echo "file '$PWD/chunk-$i.mp4'" >> list.txt
+          done
+          ffmpeg -f concat -safe 0 -i list.txt -c copy ../out.mp4
+          ffprobe -v error -show_entries format=duration -of csv=p=0 ../out.mp4
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-video
+          path: out.mp4
+          retention-days: 7
