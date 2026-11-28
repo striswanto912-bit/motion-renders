@@ -7,6 +7,7 @@ import { Scene4 } from "./scenes/Scene4";
 import { BridgeShort, BRIDGE_FRAMES } from "./videos/bridge/Bridge";
 import { StickmanRace, RACE_FRAMES } from "./videos/stickman-race/Race";
 import { StickmanTreehouse, TREEHOUSE_FRAMES } from "./videos/stickman-treehouse/Treehouse";
+import { ShowerIdeas, TOTAL_FRAMES } from "./videos/shower-ideas/ShowerIdeas";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -64,6 +65,14 @@ export const RemotionRoot: React.FC = () => {
         component={StickmanTreehouse}
         durationInFrames={TREEHOUSE_FRAMES}
         fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="ShowerIdeas"
+        component={ShowerIdeas}
+        durationInFrames={TOTAL_FRAMES}
+        fps={60}
         width={1080}
         height={1920}
       />
