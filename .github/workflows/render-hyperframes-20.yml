@@ -1,0 +1,109 @@
+name: Render HyperFrames (20 chunk)
+
+# Renders a HyperFrames project in 20 parallel time-slice chunks, then merges.
+# Each chunk job renders one --start/--end slice with `hyperframes render`
+# (the slice carries its own audio), and the merge job concatenates with ffmpeg -c copy.
+# Same-run artifact download works; cross-run download-artifact does NOT (see TUTORIAL.md).
+# FFmpeg is NOT preinstalled on ubuntu-latest: both jobs install it via apt.
+# HyperFrames CLI is the npm package `hyperframes`, pinned exact 0.9.104
+# (the project's package.json pins the same version via npx).
+# TMPDIR is pointed at a workspace dir: the local VM's /tmp is a 512MB tmpfs and
+# a render fails there with "Low disk space"; GH runners have a big /tmp, but
+# the workspace dir is safe everywhere.
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Project directory in the repo'
+        required: true
+        default: 'clinct-post2'
+      duration:
+        description: 'Total film duration in seconds'
+        required: true
+        default: '49.6'
+      quality:
+        description: 'Render quality (draft / looks / delivery)'
+        required: true
+        default: 'looks'
+
+jobs:
+  render-chunk:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install HyperFrames CLI (pinned 0.9.104)
+        run: npm i -g hyperframes@0.9.104
+
+      - name: Ensure headless Chrome
+        working-directory: ${{ inputs.project }}
+        run: hyperframes browser ensure
+
+      - name: Compute chunk range
+        id: range
+        run: |
+          idx=${{ matrix.index }}
+          step=$(awk "BEGIN{print ${{ inputs.duration }}/20}")
+          start=$(awk "BEGIN{printf \"%.2f\", $idx*$step}")
+          end=$(awk "BEGIN{printf \"%.2f\", ($idx+1)*$step}")
+          echo "start=$start" >> $GITHUB_OUTPUT
+          echo "end=$end" >> $GITHUB_OUTPUT
+          echo "chunk $idx: $start - $end"
+
+      - name: Render chunk
+        working-directory: ${{ inputs.project }}
+        run: |
+          mkdir -p .render-tmp
+          TMPDIR=$PWD/.render-tmp hyperframes render --start ${{ steps.range.outputs.start }} --end ${{ steps.range.outputs.end }} --quality ${{ inputs.quality }} -o chunk-${{ matrix.index }}.mp4 .
+
+      - name: Upload chunk artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.index }}
+          path: ${{ inputs.project }}/chunk-${{ matrix.index }}.mp4
+          retention-days: 1
+
+  merge:
+    needs: render-chunk
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Download all chunk artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: chunks
+          merge-multiple: true
+
+      - name: Verify all 20 chunks and merge
+        run: |
+          ls -la chunks/
+          for i in $(seq 0 19); do
+            test -f "chunks/chunk-$i.mp4" || { echo "missing chunk $i"; exit 1; }
+          done
+          cd chunks
+          for i in $(seq 0 19); do echo "file 'chunk-$i.mp4'" >> concat.txt; done
+          ffmpeg -f concat -safe 0 -i concat.txt -c copy ../final.mp4
+          ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 ../final.mp4
+
+      - name: Upload final video
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-video
+          path: final.mp4
+          retention-days: 7
