@@ -1,0 +1,229 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    svg {
+      position: absolute;
+      inset: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="s3" data-width="1080" data-height="1920">
+    <svg width="1080" height="1920" viewBox="0 0 1080 1920">
+      <g id="s3-stage" data-layout-allow-overflow>
+        <!-- scrolling ground marks -->
+        <g id="s3-ground">
+          <line x1="0" y1="1500" x2="1080" y2="1500" stroke="#1a1a1a" stroke-width="6" opacity="0.25" />
+          <g stroke="#1a1a1a" stroke-width="8" opacity="0.18" stroke-linecap="round">
+            <line x1="-990" y1="1620" x2="-900" y2="1620" />
+            <line x1="-855" y1="1620" x2="-765" y2="1620" />
+            <line x1="-720" y1="1620" x2="-630" y2="1620" />
+            <line x1="-585" y1="1620" x2="-495" y2="1620" />
+            <line x1="-450" y1="1620" x2="-360" y2="1620" />
+            <line x1="-315" y1="1620" x2="-225" y2="1620" />
+            <line x1="-180" y1="1620" x2="-90" y2="1620" />
+            <line x1="-45" y1="1620" x2="45" y2="1620" />
+            <line x1="90" y1="1620" x2="180" y2="1620" />
+            <line x1="225" y1="1620" x2="315" y2="1620" />
+            <line x1="360" y1="1620" x2="450" y2="1620" />
+            <line x1="495" y1="1620" x2="585" y2="1620" />
+            <line x1="630" y1="1620" x2="720" y2="1620" />
+            <line x1="765" y1="1620" x2="855" y2="1620" />
+            <line x1="900" y1="1620" x2="990" y2="1620" />
+            <line x1="1035" y1="1620" x2="1125" y2="1620" />
+          </g>
+          <g fill="#1a1a1a" opacity="0.12">
+            <circle cx="-700" cy="1700" r="10" />
+            <circle cx="-250" cy="1760" r="14" />
+            <circle cx="200" cy="1700" r="10" />
+            <circle cx="650" cy="1760" r="14" />
+            <circle cx="1000" cy="1700" r="10" />
+          </g>
+        </g>
+
+        <!-- speed lines behind Blue -->
+        <g id="s3-speed" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round" opacity="0">
+          <line x1="60" y1="1050" x2="230" y2="1050" />
+          <line x1="30" y1="1180" x2="260" y2="1180" />
+          <line x1="80" y1="1310" x2="240" y2="1310" />
+        </g>
+
+        <!-- BLUE (left, sprinting + showboating) -->
+        <g transform="translate(380,1500)">
+          <g id="s3-blue">
+            <ellipse cx="0" cy="6" rx="115" ry="18" fill="rgba(26,26,26,0.10)" />
+            <line id="s3-blue-legL" x1="-8" y1="-170" x2="-48" y2="0" stroke="#2b6cf5" stroke-width="30" stroke-linecap="round" />
+            <line id="s3-blue-legR" x1="8" y1="-170" x2="48" y2="0" stroke="#2b6cf5" stroke-width="30" stroke-linecap="round" />
+            <line id="s3-blue-body" x1="0" y1="-385" x2="0" y2="-170" stroke="#2b6cf5" stroke-width="30" stroke-linecap="round" />
+            <line id="s3-blue-armL" x1="-10" y1="-360" x2="-70" y2="-250" stroke="#2b6cf5" stroke-width="26" stroke-linecap="round" />
+            <line id="s3-blue-armR" x1="10" y1="-360" x2="70" y2="-250" stroke="#2b6cf5" stroke-width="26" stroke-linecap="round" />
+            <g id="s3-blue-head">
+              <circle cx="0" cy="-470" r="85" fill="#2b6cf5" stroke="#1a1a1a" stroke-width="10" />
+              <g stroke="#1a1a1a" stroke-width="9" stroke-linecap="round" fill="none">
+                <path d="M -46 -488 Q -32 -502 -18 -488" />
+                <path d="M 18 -488 Q 32 -502 46 -488" />
+              </g>
+              <ellipse cx="0" cy="-428" rx="30" ry="36" fill="#7a2e1d" stroke="#1a1a1a" stroke-width="8" />
+            </g>
+          </g>
+        </g>
+
+        <!-- dust puffs at Blue's feet -->
+        <g fill="#ffffff" stroke="#1a1a1a" stroke-width="4" opacity="0.9">
+          <circle id="s3-puff1" cx="330" cy="1490" r="22" />
+          <circle id="s3-puff2" cx="290" cy="1500" r="16" />
+          <circle id="s3-puff3" cx="360" cy="1505" r="14" />
+        </g>
+
+        <!-- BROWN (right, steady jog) -->
+        <g transform="translate(720,1500)">
+          <g id="s3-brown">
+            <ellipse cx="0" cy="6" rx="115" ry="18" fill="rgba(26,26,26,0.10)" />
+            <line id="s3-brown-legL" x1="-8" y1="-170" x2="-48" y2="0" stroke="#8a5a2b" stroke-width="30" stroke-linecap="round" />
+            <line id="s3-brown-legR" x1="8" y1="-170" x2="48" y2="0" stroke="#8a5a2b" stroke-width="30" stroke-linecap="round" />
+            <line id="s3-brown-body" x1="0" y1="-385" x2="0" y2="-170" stroke="#8a5a2b" stroke-width="30" stroke-linecap="round" />
+            <line id="s3-brown-armL" x1="-10" y1="-360" x2="-60" y2="-230" stroke="#8a5a2b" stroke-width="26" stroke-linecap="round" />
+            <line id="s3-brown-armR" x1="10" y1="-360" x2="60" y2="-230" stroke="#8a5a2b" stroke-width="26" stroke-linecap="round" />
+            <g id="s3-brown-head">
+              <circle cx="0" cy="-470" r="85" fill="#8a5a2b" stroke="#1a1a1a" stroke-width="10" />
+              <g>
+                <circle cx="-32" cy="-488" r="11" fill="#1a1a1a" />
+                <circle cx="32" cy="-488" r="11" fill="#1a1a1a" />
+              </g>
+              <path d="M -32 -438 Q 0 -412 32 -438" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round" fill="none" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Ground scrolls left, one full pattern pass over the scene.
+    tl.fromTo(
+      "#s3-ground",
+      { x: 0 },
+      { x: -1080, duration: 12.5, ease: "none" },
+      0,
+    );
+    // BLUE leans into the sprint.
+    tl.fromTo(
+      "#s3-blue",
+      { rotation: 0 },
+      { rotation: -12, duration: 0.4, ease: "power2.out", transformOrigin: "50% 100%" },
+      0,
+    );
+    // BLUE: fast sprint pump, 0.18 s per step.
+    tl.to(
+      "#s3-blue-legL",
+      { attr: { x2: 55, y2: -60 }, duration: 0.18, ease: "power2.inOut", yoyo: true, repeat: 60 },
+      0,
+    );
+    tl.to(
+      "#s3-blue-legR",
+      { attr: { x2: -55, y2: -60 }, duration: 0.18, ease: "power2.inOut", yoyo: true, repeat: 60 },
+      0.18,
+    );
+    tl.to(
+      "#s3-blue-armL",
+      { attr: { x2: 60, y2: -300 }, duration: 0.18, ease: "power2.inOut", yoyo: true, repeat: 60 },
+      0.18,
+    );
+    tl.to(
+      "#s3-blue-armR",
+      { attr: { x2: -60, y2: -300 }, duration: 0.18, ease: "power2.inOut", yoyo: true, repeat: 60 },
+      0,
+    );
+    tl.to(
+      "#s3-blue-head",
+      { y: -8, duration: 0.18, ease: "power2.inOut", yoyo: true, repeat: 60 },
+      0,
+    );
+    // BLUE: showboat somersault at 6.0-6.6 s, then back to the lean.
+    tl.to(
+      "#s3-blue",
+      { rotation: 348, duration: 0.6, ease: "power2.inOut", transformOrigin: "50% 50%" },
+      6.0,
+    );
+    tl.to(
+      "#s3-blue",
+      { rotation: -12, duration: 0.3, ease: "power2.out", transformOrigin: "50% 100%" },
+      6.6,
+    );
+    // Speed lines pulse while Blue sprints.
+    tl.fromTo(
+      "#s3-speed",
+      { opacity: 0 },
+      { opacity: 0.55, duration: 0.3, ease: "power2.inOut", yoyo: true, repeat: 30 },
+      0.5,
+    );
+    // Dust puffs at Blue's feet, staggered.
+    tl.fromTo(
+      "#s3-puff1",
+      { scale: 0.3, opacity: 0.7, transformOrigin: "50% 50%" },
+      { scale: 1.4, opacity: 0, duration: 0.5, ease: "power1.out", repeat: 20 },
+      0.3,
+    );
+    tl.fromTo(
+      "#s3-puff2",
+      { scale: 0.3, opacity: 0.7, transformOrigin: "50% 50%" },
+      { scale: 1.4, opacity: 0, duration: 0.5, ease: "power1.out", repeat: 20 },
+      0.47,
+    );
+    tl.fromTo(
+      "#s3-puff3",
+      { scale: 0.3, opacity: 0.7, transformOrigin: "50% 50%" },
+      { scale: 1.4, opacity: 0, duration: 0.5, ease: "power1.out", repeat: 20 },
+      0.64,
+    );
+    // BROWN: steady jog, 0.4 s per step.
+    tl.to(
+      "#s3-brown-legL",
+      { attr: { x2: 30, y2: -50 }, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 28 },
+      0,
+    );
+    tl.to(
+      "#s3-brown-legR",
+      { attr: { x2: -30, y2: -50 }, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 28 },
+      0.4,
+    );
+    tl.to(
+      "#s3-brown-armL",
+      { attr: { x2: 30, y2: -260 }, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 28 },
+      0.4,
+    );
+    tl.to(
+      "#s3-brown-armR",
+      { attr: { x2: -30, y2: -260 }, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 28 },
+      0,
+    );
+    tl.to(
+      "#s3-brown-head",
+      { y: -5, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 28 },
+      0,
+    );
+    // Punch-ins: on Blue's "Too easy!" (~4 s) and on Brown's steady line (~7.8 s).
+    tl.to(
+      "#s3-stage",
+      { scale: 1.12, duration: 0.4, ease: "power2.inOut", svgOrigin: "540 960" },
+      4.0,
+    );
+    tl.to(
+      "#s3-stage",
+      { scale: 1, duration: 0.4, ease: "power2.inOut", svgOrigin: "540 960" },
+      6.9,
+    );
+    tl.to(
+      "#s3-stage",
+      { scale: 1.12, duration: 0.4, ease: "power2.inOut", svgOrigin: "540 960" },
+      7.8,
+    );
+    tl.to(
+      "#s3-stage",
+      { scale: 1, duration: 0.4, ease: "power2.inOut", svgOrigin: "540 960" },
+      10.5,
+    );
+    window.__timelines["s3"] = tl;
+  </script>
+</template>
