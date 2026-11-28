@@ -5,6 +5,7 @@ import { Scene2 } from "./scenes/Scene2";
 import { Scene3 } from "./scenes/Scene3";
 import { Scene4 } from "./scenes/Scene4";
 import { BridgeShort, BRIDGE_FRAMES } from "./videos/bridge/Bridge";
+import { StickmanRace, RACE_FRAMES } from "./videos/stickman-race/Race";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -45,6 +46,14 @@ export const RemotionRoot: React.FC = () => {
         id="BridgeShort"
         component={BridgeShort}
         durationInFrames={BRIDGE_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="StickmanRace"
+        component={StickmanRace}
+        durationInFrames={RACE_FRAMES}
         fps={30}
         width={1080}
         height={1920}
