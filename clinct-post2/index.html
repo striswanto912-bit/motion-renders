@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #f5efe0;
+        --ink: #1a1a1a;
+        --blue: #2b6cf5;
+        --brown: #8a5a2b;
+        --tan: #d9a05b;
+        --font-display: "Poppins", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        font-family: var(--font-display);
+      }
+      #ground {
+        position: absolute;
+        inset: 0;
+        background: var(--ground);
+        z-index: 0;
+      }
+      .scene-host {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="49.6"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="ground"></div>
+
+      <!-- scene 1: mockery -->
+      <div
+        id="s1"
+        class="clip scene-host"
+        data-composition-id="s1"
+        data-composition-src="compositions/s1-mock.html"
+        data-start="0"
+        data-duration="9.7"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- scene 2: start line -->
+      <div
+        id="s2"
+        class="clip scene-host"
+        data-composition-id="s2"
+        data-composition-src="compositions/s2-start.html"
+        data-start="9.7"
+        data-duration="5.3"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- scene 3: race -->
+      <div
+        id="s3"
+        class="clip scene-host"
+        data-composition-id="s3"
+        data-composition-src="compositions/s3-race.html"
+        data-start="15"
+        data-duration="12.5"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- scene 4: the dog strolls past -->
+      <div
+        id="s4"
+        class="clip scene-host"
+        data-composition-id="s4"
+        data-composition-src="compositions/s4-dog.html"
+        data-start="27.5"
+        data-duration="6.5"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- scene 5: finish -->
+      <div
+        id="s5"
+        class="clip scene-host"
+        data-composition-id="s5"
+        data-composition-src="compositions/s5-finish.html"
+        data-start="34"
+        data-duration="8.6"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+      <!-- scene 6: laugh + CTA -->
+      <div
+        id="s6"
+        class="clip scene-host"
+        data-composition-id="s6"
+        data-composition-src="compositions/s6-laugh.html"
+        data-start="42.6"
+        data-duration="7"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+
+      <!-- hook banner: on screen from frame 0, holds through beat 2 -->
+      <div
+        id="hook"
+        class="clip scene-host"
+        data-composition-id="hook"
+        data-composition-src="compositions/hook.html"
+        data-start="0"
+        data-duration="15"
+        data-track-index="2"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+
+      <!-- CTA pill: beat 6 -->
+      <div
+        id="cta"
+        class="clip scene-host"
+        data-composition-id="cta"
+        data-composition-src="compositions/cta.html"
+        data-start="42.6"
+        data-duration="7"
+        data-track-index="2"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+
+      <!-- captions track -->
+      <div
+        id="captions"
+        class="clip scene-host"
+        data-composition-id="captions"
+        data-composition-src="compositions/captions.html"
+        data-start="0"
+        data-duration="49.6"
+        data-track-index="3"
+        data-track-kind="captions"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+
+      <!-- voiceover -->
+      <audio
+        id="vo"
+        class="clip"
+        data-start="0"
+        data-duration="49.6"
+        data-track-index="4"
+        src="assets/vo-post2.mp3"
+        data-volume="1"
+      ></audio>
+    </div>
+    <script>
+      // Root timeline: overlays now live in their own sub-compositions
+      // (hook.html, cta.html); the root only registers an empty timeline.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
