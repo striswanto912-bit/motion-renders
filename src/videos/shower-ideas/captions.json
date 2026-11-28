@@ -1,0 +1,961 @@
+[
+{
+"text": "Ever",
+"startMs": 80,
+"endMs": 528,
+"timestampMs": 304,
+"confidence": null
+},
+{
+"text": " notice",
+"startMs": 528,
+"endMs": 977,
+"timestampMs": 752,
+"confidence": null
+},
+{
+"text": " how",
+"startMs": 977,
+"endMs": 1230,
+"timestampMs": 1104,
+"confidence": null
+},
+{
+"text": " your",
+"startMs": 1230,
+"endMs": 1483,
+"timestampMs": 1356,
+"confidence": null
+},
+{
+"text": " brain",
+"startMs": 1483,
+"endMs": 1737,
+"timestampMs": 1610,
+"confidence": null
+},
+{
+"text": " suddenly",
+"startMs": 1737,
+"endMs": 2380,
+"timestampMs": 2058,
+"confidence": null
+},
+{
+"text": " unlocks",
+"startMs": 2980,
+"endMs": 3521,
+"timestampMs": 3250,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 3521,
+"endMs": 3826,
+"timestampMs": 3673,
+"confidence": null
+},
+{
+"text": " secrets",
+"startMs": 3826,
+"endMs": 4367,
+"timestampMs": 4096,
+"confidence": null
+},
+{
+"text": " of",
+"startMs": 4367,
+"endMs": 4672,
+"timestampMs": 4520,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 4672,
+"endMs": 4978,
+"timestampMs": 4825,
+"confidence": null
+},
+{
+"text": " universe",
+"startMs": 4978,
+"endMs": 5753,
+"timestampMs": 5366,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 5753,
+"endMs": 6059,
+"timestampMs": 5906,
+"confidence": null
+},
+{
+"text": " exact",
+"startMs": 6059,
+"endMs": 6599,
+"timestampMs": 6329,
+"confidence": null
+},
+{
+"text": " second",
+"startMs": 6599,
+"endMs": 7140,
+"timestampMs": 6870,
+"confidence": null
+},
+{
+"text": " hot",
+"startMs": 7250,
+"endMs": 7513,
+"timestampMs": 7382,
+"confidence": null
+},
+{
+"text": " water",
+"startMs": 7513,
+"endMs": 7980,
+"timestampMs": 7746,
+"confidence": null
+},
+{
+"text": " hits",
+"startMs": 7980,
+"endMs": 8243,
+"timestampMs": 8111,
+"confidence": null
+},
+{
+"text": " your",
+"startMs": 8243,
+"endMs": 8507,
+"timestampMs": 8375,
+"confidence": null
+},
+{
+"text": " head?",
+"startMs": 8507,
+"endMs": 8770,
+"timestampMs": 8638,
+"confidence": null
+},
+{
+"text": " You",
+"startMs": 9160,
+"endMs": 9370,
+"timestampMs": 9265,
+"confidence": null
+},
+{
+"text": " sit",
+"startMs": 9370,
+"endMs": 9580,
+"timestampMs": 9475,
+"confidence": null
+},
+{
+"text": " at",
+"startMs": 9580,
+"endMs": 9790,
+"timestampMs": 9685,
+"confidence": null
+},
+{
+"text": " your",
+"startMs": 9790,
+"endMs": 10000,
+"timestampMs": 9895,
+"confidence": null
+},
+{
+"text": " desk",
+"startMs": 10000,
+"endMs": 10210,
+"timestampMs": 10105,
+"confidence": null
+},
+{
+"text": " for",
+"startMs": 10340,
+"endMs": 10568,
+"timestampMs": 10454,
+"confidence": null
+},
+{
+"text": " three",
+"startMs": 10568,
+"endMs": 10795,
+"timestampMs": 10682,
+"confidence": null
+},
+{
+"text": " hours",
+"startMs": 10795,
+"endMs": 11023,
+"timestampMs": 10909,
+"confidence": null
+},
+{
+"text": " with",
+"startMs": 11023,
+"endMs": 11250,
+"timestampMs": 11136,
+"confidence": null
+},
+{
+"text": " zero",
+"startMs": 11250,
+"endMs": 11653,
+"timestampMs": 11452,
+"confidence": null
+},
+{
+"text": " ideas,",
+"startMs": 11653,
+"endMs": 12230,
+"timestampMs": 11942,
+"confidence": null
+},
+{
+"text": " step",
+"startMs": 12490,
+"endMs": 12747,
+"timestampMs": 12619,
+"confidence": null
+},
+{
+"text": " into",
+"startMs": 12747,
+"endMs": 13203,
+"timestampMs": 12975,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 13203,
+"endMs": 13460,
+"timestampMs": 13332,
+"confidence": null
+},
+{
+"text": " shower,",
+"startMs": 13570,
+"endMs": 13820,
+"timestampMs": 13695,
+"confidence": null
+},
+{
+"text": " and",
+"startMs": 13970,
+"endMs": 14095,
+"timestampMs": 14032,
+"confidence": null
+},
+{
+"text": " boom,",
+"startMs": 14095,
+"endMs": 14220,
+"timestampMs": 14158,
+"confidence": null
+},
+{
+"text": " instant",
+"startMs": 14580,
+"endMs": 15050,
+"timestampMs": 14815,
+"confidence": null
+},
+{
+"text": " genius.",
+"startMs": 15050,
+"endMs": 15520,
+"timestampMs": 15285,
+"confidence": null
+},
+{
+"text": " It",
+"startMs": 15990,
+"endMs": 16193,
+"timestampMs": 16092,
+"confidence": null
+},
+{
+"text": " is",
+"startMs": 16193,
+"endMs": 16397,
+"timestampMs": 16295,
+"confidence": null
+},
+{
+"text": " not",
+"startMs": 16397,
+"endMs": 16600,
+"timestampMs": 16498,
+"confidence": null
+},
+{
+"text": " magic,",
+"startMs": 16600,
+"endMs": 16960,
+"timestampMs": 16780,
+"confidence": null
+},
+{
+"text": " it",
+"startMs": 17260,
+"endMs": 17470,
+"timestampMs": 17365,
+"confidence": null
+},
+{
+"text": " is",
+"startMs": 17470,
+"endMs": 17679,
+"timestampMs": 17574,
+"confidence": null
+},
+{
+"text": " just",
+"startMs": 17679,
+"endMs": 17889,
+"timestampMs": 17784,
+"confidence": null
+},
+{
+"text": " brain",
+"startMs": 17889,
+"endMs": 18098,
+"timestampMs": 17993,
+"confidence": null
+},
+{
+"text": " chemistry.",
+"startMs": 18098,
+"endMs": 18630,
+"timestampMs": 18364,
+"confidence": null
+},
+{
+"text": " Warm",
+"startMs": 19160,
+"endMs": 19363,
+"timestampMs": 19261,
+"confidence": null
+},
+{
+"text": " water",
+"startMs": 19363,
+"endMs": 19722,
+"timestampMs": 19542,
+"confidence": null
+},
+{
+"text": " and",
+"startMs": 19722,
+"endMs": 19925,
+"timestampMs": 19824,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 19925,
+"endMs": 20128,
+"timestampMs": 20026,
+"confidence": null
+},
+{
+"text": " familiar",
+"startMs": 20128,
+"endMs": 20643,
+"timestampMs": 20386,
+"confidence": null
+},
+{
+"text": " routine",
+"startMs": 20643,
+"endMs": 21002,
+"timestampMs": 20822,
+"confidence": null
+},
+{
+"text": " trigger",
+"startMs": 21002,
+"endMs": 21361,
+"timestampMs": 21182,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 21361,
+"endMs": 21564,
+"timestampMs": 21462,
+"confidence": null
+},
+{
+"text": " massive",
+"startMs": 21564,
+"endMs": 21923,
+"timestampMs": 21743,
+"confidence": null
+},
+{
+"text": " release",
+"startMs": 21923,
+"endMs": 22282,
+"timestampMs": 22102,
+"confidence": null
+},
+{
+"text": " of",
+"startMs": 22282,
+"endMs": 22485,
+"timestampMs": 22383,
+"confidence": null
+},
+{
+"text": " dopamine,",
+"startMs": 22485,
+"endMs": 23000,
+"timestampMs": 22742,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 23350,
+"endMs": 23523,
+"timestampMs": 23437,
+"confidence": null
+},
+{
+"text": " exact",
+"startMs": 23523,
+"endMs": 23830,
+"timestampMs": 23676,
+"confidence": null
+},
+{
+"text": " neurotransmitter",
+"startMs": 23920,
+"endMs": 24745,
+"timestampMs": 24333,
+"confidence": null
+},
+{
+"text": " tied",
+"startMs": 24745,
+"endMs": 24948,
+"timestampMs": 24846,
+"confidence": null
+},
+{
+"text": " to",
+"startMs": 24948,
+"endMs": 25150,
+"timestampMs": 25049,
+"confidence": null
+},
+{
+"text": " creativity.",
+"startMs": 25220,
+"endMs": 25770,
+"timestampMs": 25495,
+"confidence": null
+},
+{
+"text": " Plus,",
+"startMs": 26300,
+"endMs": 26455,
+"timestampMs": 26377,
+"confidence": null
+},
+{
+"text": " because",
+"startMs": 26455,
+"endMs": 26730,
+"timestampMs": 26592,
+"confidence": null
+},
+{
+"text": " you",
+"startMs": 26810,
+"endMs": 27029,
+"timestampMs": 26920,
+"confidence": null
+},
+{
+"text": " are",
+"startMs": 27029,
+"endMs": 27249,
+"timestampMs": 27139,
+"confidence": null
+},
+{
+"text": " not",
+"startMs": 27249,
+"endMs": 27468,
+"timestampMs": 27358,
+"confidence": null
+},
+{
+"text": " staring",
+"startMs": 27468,
+"endMs": 27856,
+"timestampMs": 27662,
+"confidence": null
+},
+{
+"text": " at",
+"startMs": 27856,
+"endMs": 28076,
+"timestampMs": 27966,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 28076,
+"endMs": 28295,
+"timestampMs": 28186,
+"confidence": null
+},
+{
+"text": " phone",
+"startMs": 28295,
+"endMs": 28514,
+"timestampMs": 28404,
+"confidence": null
+},
+{
+"text": " or",
+"startMs": 28514,
+"endMs": 28734,
+"timestampMs": 28624,
+"confidence": null
+},
+{
+"text": " dodging",
+"startMs": 28734,
+"endMs": 29122,
+"timestampMs": 28928,
+"confidence": null
+},
+{
+"text": " traffic,",
+"startMs": 29122,
+"endMs": 29510,
+"timestampMs": 29316,
+"confidence": null
+},
+{
+"text": " your",
+"startMs": 29820,
+"endMs": 29910,
+"timestampMs": 29865,
+"confidence": null
+},
+{
+"text": " prefrontal",
+"startMs": 30010,
+"endMs": 30635,
+"timestampMs": 30322,
+"confidence": null
+},
+{
+"text": " cortex",
+"startMs": 30635,
+"endMs": 31070,
+"timestampMs": 30852,
+"confidence": null
+},
+{
+"text": " chills",
+"startMs": 31150,
+"endMs": 31330,
+"timestampMs": 31240,
+"confidence": null
+},
+{
+"text": " out",
+"startMs": 31330,
+"endMs": 31510,
+"timestampMs": 31420,
+"confidence": null
+},
+{
+"text": " and",
+"startMs": 31510,
+"endMs": 31690,
+"timestampMs": 31600,
+"confidence": null
+},
+{
+"text": " hands",
+"startMs": 31860,
+"endMs": 32075,
+"timestampMs": 31968,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 32075,
+"endMs": 32290,
+"timestampMs": 32183,
+"confidence": null
+},
+{
+"text": " mic",
+"startMs": 32290,
+"endMs": 32505,
+"timestampMs": 32398,
+"confidence": null
+},
+{
+"text": " to",
+"startMs": 32505,
+"endMs": 32720,
+"timestampMs": 32612,
+"confidence": null
+},
+{
+"text": " your",
+"startMs": 32720,
+"endMs": 32935,
+"timestampMs": 32828,
+"confidence": null
+},
+{
+"text": " Default",
+"startMs": 32935,
+"endMs": 33315,
+"timestampMs": 33125,
+"confidence": null
+},
+{
+"text": " Mode",
+"startMs": 33315,
+"endMs": 33530,
+"timestampMs": 33422,
+"confidence": null
+},
+{
+"text": " Network.",
+"startMs": 33530,
+"endMs": 33910,
+"timestampMs": 33720,
+"confidence": null
+},
+{
+"text": " That",
+"startMs": 34430,
+"endMs": 34631,
+"timestampMs": 34530,
+"confidence": null
+},
+{
+"text": " is",
+"startMs": 34631,
+"endMs": 34832,
+"timestampMs": 34732,
+"confidence": null
+},
+{
+"text": " the",
+"startMs": 34832,
+"endMs": 35033,
+"timestampMs": 34933,
+"confidence": null
+},
+{
+"text": " part",
+"startMs": 35033,
+"endMs": 35234,
+"timestampMs": 35134,
+"confidence": null
+},
+{
+"text": " of",
+"startMs": 35234,
+"endMs": 35435,
+"timestampMs": 35335,
+"confidence": null
+},
+{
+"text": " your",
+"startMs": 35435,
+"endMs": 35636,
+"timestampMs": 35536,
+"confidence": null
+},
+{
+"text": " brain",
+"startMs": 35636,
+"endMs": 35837,
+"timestampMs": 35737,
+"confidence": null
+},
+{
+"text": " that",
+"startMs": 35837,
+"endMs": 36039,
+"timestampMs": 35938,
+"confidence": null
+},
+{
+"text": " wanders",
+"startMs": 36039,
+"endMs": 36394,
+"timestampMs": 36216,
+"confidence": null
+},
+{
+"text": " freely,",
+"startMs": 36394,
+"endMs": 36750,
+"timestampMs": 36572,
+"confidence": null
+},
+{
+"text": " connecting",
+"startMs": 37040,
+"endMs": 37220,
+"timestampMs": 37130,
+"confidence": null
+},
+{
+"text": " random",
+"startMs": 37300,
+"endMs": 37660,
+"timestampMs": 37480,
+"confidence": null
+},
+{
+"text": " memories",
+"startMs": 37660,
+"endMs": 38177,
+"timestampMs": 37918,
+"confidence": null
+},
+{
+"text": " and",
+"startMs": 38177,
+"endMs": 38380,
+"timestampMs": 38278,
+"confidence": null
+},
+{
+"text": " half-baked",
+"startMs": 38380,
+"endMs": 38740,
+"timestampMs": 38560,
+"confidence": null
+},
+{
+"text": " thoughts",
+"startMs": 38850,
+"endMs": 39060,
+"timestampMs": 38955,
+"confidence": null
+},
+{
+"text": " into",
+"startMs": 39150,
+"endMs": 39567,
+"timestampMs": 39358,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 39567,
+"endMs": 39803,
+"timestampMs": 39685,
+"confidence": null
+},
+{
+"text": " sudden",
+"startMs": 39803,
+"endMs": 40220,
+"timestampMs": 40012,
+"confidence": null
+},
+{
+"text": " aha",
+"startMs": 40360,
+"endMs": 40815,
+"timestampMs": 40588,
+"confidence": null
+},
+{
+"text": " moment.",
+"startMs": 40815,
+"endMs": 41270,
+"timestampMs": 41043,
+"confidence": null
+},
+{
+"text": " So",
+"startMs": 41800,
+"endMs": 41966,
+"timestampMs": 41883,
+"confidence": null
+},
+{
+"text": " next",
+"startMs": 41966,
+"endMs": 42132,
+"timestampMs": 42049,
+"confidence": null
+},
+{
+"text": " time",
+"startMs": 42132,
+"endMs": 42297,
+"timestampMs": 42214,
+"confidence": null
+},
+{
+"text": " you",
+"startMs": 42297,
+"endMs": 42463,
+"timestampMs": 42380,
+"confidence": null
+},
+{
+"text": " are",
+"startMs": 42463,
+"endMs": 42629,
+"timestampMs": 42546,
+"confidence": null
+},
+{
+"text": " stuck",
+"startMs": 42629,
+"endMs": 42795,
+"timestampMs": 42712,
+"confidence": null
+},
+{
+"text": " on",
+"startMs": 42795,
+"endMs": 42961,
+"timestampMs": 42878,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 42961,
+"endMs": 43127,
+"timestampMs": 43044,
+"confidence": null
+},
+{
+"text": " problem,",
+"startMs": 43127,
+"endMs": 43420,
+"timestampMs": 43274,
+"confidence": null
+},
+{
+"text": " stop",
+"startMs": 43670,
+"endMs": 43852,
+"timestampMs": 43761,
+"confidence": null
+},
+{
+"text": " forcing",
+"startMs": 43852,
+"endMs": 44175,
+"timestampMs": 44013,
+"confidence": null
+},
+{
+"text": " it",
+"startMs": 44175,
+"endMs": 44358,
+"timestampMs": 44266,
+"confidence": null
+},
+{
+"text": " and",
+"startMs": 44358,
+"endMs": 44540,
+"timestampMs": 44449,
+"confidence": null
+},
+{
+"text": " go",
+"startMs": 44610,
+"endMs": 44790,
+"timestampMs": 44700,
+"confidence": null
+},
+{
+"text": " take",
+"startMs": 44880,
+"endMs": 45087,
+"timestampMs": 44984,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 45087,
+"endMs": 45294,
+"timestampMs": 45190,
+"confidence": null
+},
+{
+"text": " shower.",
+"startMs": 45294,
+"endMs": 45660,
+"timestampMs": 45477,
+"confidence": null
+},
+{
+"text": " Just",
+"startMs": 46130,
+"endMs": 46380,
+"timestampMs": 46255,
+"confidence": null
+},
+{
+"text": " maybe",
+"startMs": 46560,
+"endMs": 46969,
+"timestampMs": 46764,
+"confidence": null
+},
+{
+"text": " keep",
+"startMs": 46969,
+"endMs": 47200,
+"timestampMs": 47085,
+"confidence": null
+},
+{
+"text": " a",
+"startMs": 47280,
+"endMs": 47534,
+"timestampMs": 47407,
+"confidence": null
+},
+{
+"text": " waterproof",
+"startMs": 47534,
+"endMs": 48180,
+"timestampMs": 47857,
+"confidence": null
+},
+{
+"text": " notepad",
+"startMs": 48270,
+"endMs": 48570,
+"timestampMs": 48420,
+"confidence": null
+},
+{
+"text": " nearby?",
+"startMs": 48570,
+"endMs": 48870,
+"timestampMs": 48720,
+"confidence": null
+}
+]
