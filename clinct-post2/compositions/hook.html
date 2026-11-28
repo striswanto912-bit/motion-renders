@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hook banner — CHOOSE A STICKMAN</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+  #hook { position: relative; width: 1080px; height: 1920px; font-family: 'Poppins', sans-serif; }
+  #hook-banner {
+    position: absolute; left: 0; top: 300px; width: 100%;
+    text-align: center; pointer-events: none;
+  }
+  #hook-inner { display: inline-block; padding: 0 24px; }
+  #hook-inner .hook-line {
+    font-weight: 800; font-size: 60px; line-height: 1.12;
+    letter-spacing: 0.01em; color: #1A1A1A; white-space: nowrap;
+  }
+  #hook-inner .hook-line .w-blue { color: #2B6CF5; }
+  #hook-inner .hook-line .w-brown { color: #8A5A2B; }
+</style>
+</head>
+<body>
+<div id="hook" data-composition-id="hook" data-start="0" data-duration="15">
+  <div id="hook-banner">
+    <div id="hook-inner">
+      <div class="hook-line">CHOOSE A STICKMAN</div>
+      <div class="hook-line"><span class="w-blue">BLUE</span> or <span class="w-brown">BROWN?</span></div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script>
+(function () {
+  var tl = gsap.timeline({ paused: true });
+  // Pop-in is scale-only: the text is fully opaque from frame 0 (the hook
+  // must be readable on the very first frame / thumbnail).
+  tl.fromTo("#hook-inner",
+    { scale: 0.94, y: -8 },
+    { scale: 1, y: 0, duration: 0.25, ease: "power2.out" }, 0);
+  tl.to("#hook-inner",
+    { opacity: 0, scale: 1.04, duration: 0.25, ease: "power2.in" }, 14.3);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["hook"] = tl;
+})();
+</script>
+</body>
+</html>

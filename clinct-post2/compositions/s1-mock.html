@@ -1,0 +1,138 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    svg {
+      position: absolute;
+      inset: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="s1" data-width="1080" data-height="1920">
+    <svg width="1080" height="1920" viewBox="0 0 1080 1920">
+      <!-- ground line -->
+      <line x1="0" y1="1500" x2="1080" y2="1500" stroke="#1a1a1a" stroke-width="6" opacity="0.25" />
+
+      <!-- BLUE (left, pointing + laughing at Brown) -->
+      <g transform="translate(300,1500)">
+        <g id="s1-blue">
+          <ellipse cx="0" cy="6" rx="115" ry="18" fill="rgba(26,26,26,0.10)" />
+          <line id="s1-blue-legL" x1="-8" y1="-170" x2="-48" y2="0" stroke="#2b6cf5" stroke-width="30" stroke-linecap="round" />
+          <line id="s1-blue-legR" x1="8" y1="-170" x2="48" y2="0" stroke="#2b6cf5" stroke-width="30" stroke-linecap="round" />
+          <line id="s1-blue-body" x1="0" y1="-385" x2="0" y2="-170" stroke="#2b6cf5" stroke-width="30" stroke-linecap="round" />
+          <line id="s1-blue-armL" x1="-10" y1="-360" x2="-72" y2="-250" stroke="#2b6cf5" stroke-width="26" stroke-linecap="round" />
+          <line id="s1-blue-armR" x1="10" y1="-360" x2="70" y2="-260" stroke="#2b6cf5" stroke-width="26" stroke-linecap="round" />
+          <g id="s1-blue-head">
+            <circle cx="0" cy="-470" r="85" fill="#2b6cf5" stroke="#1a1a1a" stroke-width="10" />
+            <g id="s1-blue-eyes" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round" fill="none">
+              <path d="M -46 -488 Q -32 -502 -18 -488" />
+              <path d="M 18 -488 Q 32 -502 46 -488" />
+            </g>
+            <ellipse id="s1-blue-mouth-laugh" cx="0" cy="-428" rx="30" ry="36" fill="#7a2e1d" stroke="#1a1a1a" stroke-width="8" />
+            <path id="s1-blue-mouth-smile" d="M -32 -438 Q 0 -412 32 -438" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round" fill="none" opacity="0" />
+          </g>
+        </g>
+      </g>
+
+      <!-- BROWN (right, walking calmly) -->
+      <g transform="translate(740,1500)">
+        <g id="s1-brown">
+          <ellipse cx="0" cy="6" rx="115" ry="18" fill="rgba(26,26,26,0.10)" />
+          <line id="s1-brown-legL" x1="-8" y1="-170" x2="-48" y2="0" stroke="#8a5a2b" stroke-width="30" stroke-linecap="round" />
+          <line id="s1-brown-legR" x1="8" y1="-170" x2="48" y2="0" stroke="#8a5a2b" stroke-width="30" stroke-linecap="round" />
+          <line id="s1-brown-body" x1="0" y1="-385" x2="0" y2="-170" stroke="#8a5a2b" stroke-width="30" stroke-linecap="round" />
+          <line id="s1-brown-armL" x1="-10" y1="-360" x2="-60" y2="-230" stroke="#8a5a2b" stroke-width="26" stroke-linecap="round" />
+          <line id="s1-brown-armR" x1="10" y1="-360" x2="60" y2="-230" stroke="#8a5a2b" stroke-width="26" stroke-linecap="round" />
+          <g id="s1-brown-head">
+            <circle cx="0" cy="-470" r="85" fill="#8a5a2b" stroke="#1a1a1a" stroke-width="10" />
+            <g id="s1-brown-eyes">
+              <circle cx="-32" cy="-488" r="11" fill="#1a1a1a" />
+              <circle cx="32" cy="-488" r="11" fill="#1a1a1a" />
+            </g>
+            <path id="s1-brown-mouth-smile" d="M -32 -438 Q 0 -412 32 -438" stroke="#1a1a1a" stroke-width="9" stroke-linecap="round" fill="none" />
+          </g>
+        </g>
+      </g>
+
+      <!-- DOG (sitting right, watching) -->
+      <g transform="translate(880,1500) scale(0.8)" data-layout-allow-overflow>
+        <g id="s1-dog">
+          <ellipse cx="0" cy="6" rx="130" ry="16" fill="rgba(26,26,26,0.10)" />
+          <g id="s1-dog-tail">
+            <path d="M -118 -130 Q -165 -160 -150 -205" stroke="#d9a05b" stroke-width="16" stroke-linecap="round" fill="none" />
+          </g>
+          <ellipse cx="0" cy="-95" rx="125" ry="80" fill="#d9a05b" stroke="#1a1a1a" stroke-width="8" />
+          <line x1="-55" y1="-50" x2="-55" y2="0" stroke="#d9a05b" stroke-width="22" stroke-linecap="round" />
+          <line x1="55" y1="-50" x2="55" y2="0" stroke="#d9a05b" stroke-width="22" stroke-linecap="round" />
+          <g id="s1-dog-head">
+            <ellipse cx="92" cy="-228" rx="24" ry="38" fill="#b07a3a" stroke="#1a1a1a" stroke-width="7" transform="rotate(-14 92 -228)" />
+            <circle cx="128" cy="-185" r="60" fill="#d9a05b" stroke="#1a1a1a" stroke-width="8" />
+            <ellipse cx="176" cy="-172" rx="30" ry="22" fill="#e8c08a" stroke="#1a1a1a" stroke-width="6" />
+            <circle cx="200" cy="-180" r="9" fill="#1a1a1a" />
+            <circle cx="132" cy="-198" r="9" fill="#1a1a1a" />
+            <path d="M 152 -158 Q 166 -148 180 -158" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round" fill="none" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // BLUE: point at Brown (arm extends, back.out), then laugh-shake the head.
+    tl.fromTo(
+      "#s1-blue-armR",
+      { attr: { x2: 70, y2: -260 } },
+      { attr: { x2: 175, y2: -395 }, duration: 0.4, ease: "back.out(1.4)" },
+      0.3,
+    );
+    tl.fromTo(
+      "#s1-blue-head",
+      { rotation: -4 },
+      { rotation: 5, duration: 0.35, ease: "power2.inOut", yoyo: true, repeat: 12 },
+      0.7,
+    );
+    // BLUE: laugh bounce (finite yoyo).
+    tl.to(
+      "#s1-blue",
+      { y: -12, duration: 0.25, ease: "power2.out", yoyo: true, repeat: 15 },
+      0.5,
+    );
+    // BROWN: slow walk in place, legs + arms in opposition, 1.2 s per step.
+    tl.to(
+      "#s1-brown-legL",
+      { attr: { x2: -8 }, duration: 0.6, ease: "power2.inOut", yoyo: true, repeat: 7 },
+      0,
+    );
+    tl.to(
+      "#s1-brown-legR",
+      { attr: { x2: 8 }, duration: 0.6, ease: "power2.inOut", yoyo: true, repeat: 7 },
+      0.6,
+    );
+    tl.to(
+      "#s1-brown-armL",
+      { attr: { x2: -30, y2: -260 }, duration: 0.6, ease: "power2.inOut", yoyo: true, repeat: 7 },
+      0.6,
+    );
+    tl.to(
+      "#s1-brown-armR",
+      { attr: { x2: 30, y2: -260 }, duration: 0.6, ease: "power2.inOut", yoyo: true, repeat: 7 },
+      0,
+    );
+    tl.to(
+      "#s1-brown-head",
+      { y: -6, duration: 0.6, ease: "power2.inOut", yoyo: true, repeat: 7 },
+      0,
+    );
+    // DOG: head turns to watch Blue, then Brown; tail wags.
+    tl.to("#s1-dog-head", { rotation: -16, duration: 0.5, ease: "power2.inOut" }, 1.0);
+    tl.to("#s1-dog-head", { rotation: 12, duration: 0.6, ease: "power2.inOut" }, 4.2);
+    tl.to("#s1-dog-head", { rotation: 0, duration: 0.5, ease: "power2.inOut" }, 7.5);
+    tl.to(
+      "#s1-dog-tail",
+      { rotation: 18, duration: 0.3, ease: "power2.inOut", yoyo: true, repeat: 20 },
+      0.2,
+    );
+    window.__timelines["s1"] = tl;
+  </script>
+</template>
